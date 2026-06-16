@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tripod - OASIDOS Starlink Mini Accessories</title>
-    <meta name="description" content="Starlink Mini Tripod series, portable adjustable tripods for outdoor use.">
-    <meta name="keywords" content="Starlink Tripod, Starlink stand, Starlink Mini accessories">
+    <meta name="description" content="Starlink Mini Tripod series, stable portable stands for outdoor use.">
+    <meta name="keywords" content="Starlink Tripod, Starlink portable stand, Starlink Mini accessories">
+
+    <!-- 字体预连接 优化网络依赖 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 首屏LCP图片预加载 -->
+    <link rel="preload" href="assets/Starlink-Tripod1.webp" as="image" type="image/webp">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* ====================== 全局变量 ====================== */
         :root {
             --color-primary: #2C3E50;
             --color-dark: #212121;
@@ -18,31 +24,41 @@
             --color-bg-light: #F5F5F5;
             --color-accent: #D35400;
             --color-white: #FFFFFF;
-            --shadow: 0 2px 8px rgba(0, 0, 0.08);
+            /* 修复rgba语法错误 */
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
+
+        /* ====================== 全局重置 ====================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Inter', Arial, sans-serif;
+            font-display: swap;
             color: var(--color-text);
             line-height: 1.6;
             background-color: var(--color-bg-light);
         }
+
         a {
             text-decoration: none;
             color: inherit;
         }
+
         ul {
             list-style: none;
         }
+
+        /* ====================== 通用样式 ====================== */
         .container {
             width: 92%;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -54,12 +70,15 @@
             border: none;
             cursor: pointer;
         }
+
         .btn:hover {
             background-color: #1f2d3d;
         }
+
         .section-padding {
             padding: 60px 0;
         }
+
         .section-title {
             font-size: 28px;
             color: var(--color-dark);
@@ -67,7 +86,57 @@
             margin-bottom: 40px;
             font-weight: 700;
         }
- /* ========== 悬浮WhatsApp按钮 ========== */
+
+        /* ====================== 顶部导航 ====================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--color-white);
+            box-shadow: var(--shadow);
+            z-index: 999;
+        }
+
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-menu li a {
+            font-weight: 500;
+            color: var(--color-dark);
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: var(--color-primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--color-dark);
+        }
+
+        /* ====================== 悬浮WhatsApp按钮 ====================== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -80,63 +149,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
+            cursor: pointer;
+            outline: none;
+            border: none;
         }
+
         .whatsapp-float:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
+
         .whatsapp-float img {
             width: 32px;
             height: 32px;
         }
-        /* 顶部导航 */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--color-white);
-            box-shadow: var(--shadow);
-            z-index: 999;
-        }
-        .nav-wrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-        .logo-img {
-            height: 50px;
-            width: auto;
-            max-width: 180px;
-            object-fit: contain;
-            display: block;
-        }
-        .nav-menu {
-            display: flex;
-            gap: 32px;
-        }
-        .nav-menu li a {
-            font-weight: 500;
-            color: var(--color-dark);
-            transition: color 0.3s;
-        }
-        .nav-menu li a:hover, .nav-menu li a.active {
-            color: var(--color-primary);
-        }
-        .menu-toggle {
-            display: none;
-        }
 
-        /* 主体布局 */
+        /* ====================== 主体布局 ====================== */
         .main-wrap {
             margin-top: 90px;
             display: grid;
             grid-template-columns: 220px 1fr;
             gap: 30px;
         }
+
         /* 左侧分类栏 */
         .sidebar {
             background-color: var(--color-white);
@@ -145,6 +182,7 @@
             box-shadow: var(--shadow);
             height: fit-content;
         }
+
         .sidebar h3 {
             font-size: 20px;
             color: var(--color-dark);
@@ -152,16 +190,20 @@
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
+
         .category-list li {
             margin-bottom: 12px;
         }
+
         .category-list a {
             display: block;
             padding: 10px 14px;
             border-radius: 2px;
             transition: all 0.3s;
         }
-        .category-list a:hover, .category-list a.active {
+
+        .category-list a:hover,
+        .category-list a.active {
             background-color: var(--color-primary);
             color: var(--color-white);
         }
@@ -173,6 +215,7 @@
             border-radius: 4px;
             box-shadow: var(--shadow);
         }
+
         .product-main h2 {
             font-size: 24px;
             color: var(--color-dark);
@@ -180,11 +223,13 @@
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
+
         .product-card {
             background: #fff;
             border-radius: 4px;
@@ -192,16 +237,18 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
+
         .product-card:hover {
             transform: translateY(-5px);
         }
-        /* 1:1 正方形图片容器，图片完整展示不变形 */
+
         .product-card-img-wrap {
             width: 100%;
             padding-top: 100%;
             position: relative;
             background-color: #fafafa;
         }
+
         .product-card img {
             position: absolute;
             top: 0;
@@ -210,7 +257,10 @@
             height: 100%;
             object-fit: contain;
             display: block;
+            opacity: 1;
+            transition: opacity 0.3s ease;
         }
+
         .product-card .product-name {
             padding: 15px;
             font-size: 16px;
@@ -219,25 +269,28 @@
             text-align: center;
         }
 
-        /* 页脚样式 */
+        /* ====================== 页脚 ====================== */
         footer {
             margin-top: 60px;
             background-color: var(--color-dark);
             color: var(--color-white);
             padding: 50px 0 20px;
         }
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin-bottom: 40px;
         }
+
         .footer-col h4 {
             font-size: 18px;
             margin-bottom: 16px;
             position: relative;
             padding-bottom: 8px;
         }
+
         .footer-col h4::after {
             content: '';
             position: absolute;
@@ -247,14 +300,18 @@
             height: 2px;
             background-color: var(--color-primary);
         }
-        .footer-col p, .footer-col a {
+
+        .footer-col p,
+        .footer-col a {
             font-size: 14px;
             color: #ccc;
             line-height: 1.8;
         }
+
         .footer-col a:hover {
             color: var(--color-white);
         }
+
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -263,7 +320,7 @@
             color: #999;
         }
 
-        /* 响应式适配 */
+        /* ====================== 响应式布局（修复媒体查询语法） ====================== */
         @media (max-width: 992px) {
             .main-wrap {
                 grid-template-columns: 1fr;
@@ -275,24 +332,45 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
         }
-        @media (max: 576px) {
-            .product-grid, .footer-grid {
+
+        @media (max-width: 576px) {
+            .product-grid,
+            .footer-grid {
                 grid-template-columns: 1fr;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float img {
+                width: 28px;
+                height: 28px;
+            }
+            .nav-wrap {
+                height: 60px;
+            }
+            .logo-img {
+                height: 40px;
+            }
+            .main-wrap {
+                margin-top: 80px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 顶部导航 -->
     <header>
         <div class="container nav-wrap">
-            <a href="index.html">
-                <img src="assets/logo.webp" alt="OASIDOS Logo" class="logo-img">
+            <a href="index.html" aria-label="Go to homepage">
+                <img src="assets/logo.webp" alt="OASIDOS Logo" class="logo-img" width="180" height="50">
             </a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
@@ -300,13 +378,13 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation">☰</div>
         </div>
     </header>
 
     <div class="container">
         <div class="main-wrap">
-            <!-- 左侧分类菜单 -->
-            <aside class="sidebar">
+            <aside class="sidebar" aria-label="Product categories">
                 <h3>Product Categories</h3>
                 <ul class="category-list">
                     <li><a href="products.html">Car Mount</a></li>
@@ -314,62 +392,63 @@
                     <li><a href="roof-mount.html">Roof Mount</a></li>
                     <li><a href="router-mount.html">Router Mount</a></li>
                     <li><a href="mini-case.html">Mini Case</a></li>
-                    <li><a href=".html" class="active">Tripod</a></li>
+                    <li><a href="tripod.html" class="active">Tripod</a></li>
                     <li><a href="protective-cover.html">Protective Cover</a></li>
                     <li><a href="other-accessories.html">Other Accessories</a></li>
                 </ul>
             </aside>
 
-            <!-- 右侧产品展示区 -->
             <main class="product-main">
                 <h2>Starlink Tripod Series</h2>
                 <div class="product-grid">
+                    <!-- 首屏LCP图：移除懒加载，补全宽高 -->
                     <div class="product-card">
-                        <a href="detail-tripod-01.html">
+                        <a href="detail-tripod-01.html" aria-label="View details of Portable Tripod">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Tripod1.webp" alt="Starlink Tripod 01"loading="lazy">
+                                <img src="assets/Starlink-Tripod1.webp" alt="Portable Starlink Mini Tripod" width="800" height="800">
                             </div>
-                            <div class="product-name">Folding Outdoor Tripod</div>
+                            <div class="product-name">Portable Tripod</div>
+                        </a>
+                    </div>
+                    <!-- 其余图片：懒加载 + 宽高 -->
+                    <div class="product-card">
+                        <a href="detail-tripod-02.html" aria-label="View details of Adjustable Tripod">
+                            <div class="product-card-img-wrap">
+                                <img src="assets/Starlink-Tripod2.webp" alt="Adjustable Starlink Mini Tripod" loading="lazy" width="800" height="800">
+                            </div>
+                            <div class="product-name">Adjustable Tripod</div>
                         </a>
                     </div>
                     <div class="product-card">
-                        <a href="detail-tripod-02.html">
+                        <a href="detail-tripod-03.html" aria-label="View details of Outdoor Tripod">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Tripod2.webp" alt="Starlink Tripod 02"loading="lazy">
+                                <img src="assets/Starlink-Tripod3.webp" alt="Outdoor Starlink Mini Tripod" loading="lazy" width="800" height="800">
                             </div>
-                            <div class="product-name">Height Adjustable Tripod</div>
+                            <div class="product-name">Outdoor Tripod</div>
                         </a>
                     </div>
                     <div class="product-card">
-                        <a href="detail-tripod-03.html">
+                        <a href="detail-tripod-04.html" aria-label="View details of Foldable Tripod">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Tripod6.webp" alt="Starlink Tripod 03"loading="lazy">
+                                <img src="assets/Starlink-Tripod4.webp" alt="Foldable Starlink Mini Tripod" loading="lazy" width="800" height="800">
                             </div>
-                            <div class="product-name">Stable Ground Tripod</div>
+                            <div class="product-name">Foldable Tripod</div>
                         </a>
                     </div>
                     <div class="product-card">
-                        <a href="detail-tripod-04.html">
+                        <a href="detail-tripod-05.html" aria-label="View details of Heavy Duty Tripod">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Tripod4.webp" alt="Starlink Tripod 04"loading="lazy">
+                                <img src="assets/Starlink-Tripod5.webp" alt="Heavy Duty Starlink Mini Tripod" loading="lazy" width="800" height="800">
                             </div>
-                            <div class="product-name">Lightweight Portable Tripod</div>
+                            <div class="product-name">Heavy Duty Tripod</div>
                         </a>
                     </div>
                     <div class="product-card">
-                        <a href="detail-tripod-05.html">
+                        <a href="detail-tripod-06.html" aria-label="View details of Compact Tripod">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Tripod5.webp" alt="Starlink Tripod 05"loading="lazy">
+                                <img src="assets/Starlink-Tripod6.webp" alt="Compact Starlink Mini Tripod" loading="lazy" width="800" height="800">
                             </div>
-                            <div class="product-name">Alloy Heavy Duty Tripod</div>
-                        </a>
-                    </div>
-                    <div class="product-card">
-                        <a href="detail-tripod-06.html">
-                            <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Tripod6.webp" alt="Starlink Tripod 06"loading="lazy">
-                            </div>
-                            <div class="product-name">Multi-Angle Tripod Stand</div>
+                            <div class="product-name">Compact Tripod</div>
                         </a>
                     </div>
                 </div>
@@ -377,7 +456,6 @@
         </div>
     </div>
 
-    <!-- 页脚 -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -398,9 +476,9 @@
                     <p><a href="roof-mount.html">Roof Mount</a></p>
                     <p><a href="router-mount.html">Router Mount</a></p>
                     <p><a href="tripod.html">Tripod</a></p>
-                    <p><a href="car-mount.html">Car Mount</p>
-                    <p><a href="car-adapter.html">Car Adapter</p>
-                    <p><a href="protective-cover.html">Protective Cover</p>
+                    <p><a href="products.html">Car Mount</a></p>
+                    <p><a href="car-adapter.html">Car Adapter</a></p>
+                    <p><a href="protective-cover.html">Protective Cover</a></p>
                     <p><a href="other-accessories.html">Other Accessories</a></p>
                 </div>
                 <div class="footer-col">
@@ -414,9 +492,9 @@
             </div>
         </div>
     </footer>
-    <!-- 悬浮WhatsApp聊天按钮 -->
-    <a href="https://wa.me/8618025475525" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+
+    <a href="https://wa.me/8618025475525" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat via WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 </body>
 </html>
