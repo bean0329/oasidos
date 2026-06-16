@@ -340,12 +340,18 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-        }
+     .footer-grid {
+    display: grid;
+    /* 每一列最小220px，空间足够4列并排，不足自动换行成2列/1列 */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+/* 页脚链接文字禁止自动换行 */
+.footer-col p a,
+.footer-col p {
+    white-space: nowrap;
+}
         .footer-col h4 {
             font-size: 18px;
             margin-bottom: 16px;
@@ -496,7 +502,7 @@
                                  alt="Starlink Mini Car Mount for Dashboard & Windshield"
                                  width="800" height="800"
                                  loading="eager"
-                                 srcset="assets/Starlink_Car_Mount1-400.webp 400w, assets/Starlink_Car_Mount1-800.webp 800w"
+                                 srcset="assets/Starlink_Car_Mount1-400.webp 400w, assets/Starlink-Car-Mount1-800.webp 800w"
                                  sizes="(max-width: 768px) 100vw, 800px">
                         </div>
                         <div class="slider-item">
