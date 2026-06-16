@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - OASIDOS | Starlink Mini Accessories Manufacturer</title>
-    <meta name="description" content="OASIDOS is a professional Shenzhen-based manufacturer of high-quality Starlink Mini accessories. Learn about our story, craftsmanship and commitment to outdoor-ready products.">
-    <meta name="keywords" content="OASIDOS about us, Starlink Mini accessories manufacturer, Shenzhen Starlink accessories factory">
-    <!-- Google Fonts - Inter 字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- SEO 优化：增强描述标签，提升关键词密度 -->
+    <meta name="description" content="OASIDOS is a professional Shenzhen-based manufacturer of high-quality Starlink Mini accessories. Explore our brand story, manufacturing strengths, core advantages and commitment to durable outdoor-ready Starlink products.">
+    <meta name="keywords" content="OASIDOS about us, Starlink Mini accessories manufacturer, Shenzhen Starlink accessories factory, Starlink Mini accessories factory, durable Starlink accessories, outdoor Starlink accessories">
+    <!-- 谷歌SEO核心标签 -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="OASIDOS">
+    <meta property="og:title" content="About Us - OASIDOS | Starlink Mini Accessories Manufacturer">
+    <meta property="og:description" content="Professional Shenzhen-based manufacturer of high-quality, durable Starlink Mini accessories for outdoor use.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 性能优化：内联关键CSS，非关键CSS保持内联（单页面） -->
     <style>
         /* ========== 全局样式重置 & 基础变量 ========== */
         :root {
@@ -34,6 +43,7 @@
             color: var(--color-text);
             line-height: 1.6;
             background-color: var(--color-white);
+            scroll-behavior: smooth; /* 平滑滚动提升体验 */
         }
 
         a {
@@ -61,6 +71,10 @@
             transition: background-color 0.3s ease;
             border: none;
             cursor: pointer;
+            /* 按钮优化：提升可点击区域 */
+            min-height: 44px;
+            min-width: 44px;
+            line-height: 1.2;
         }
 
         .btn:hover {
@@ -77,6 +91,8 @@
             text-align: center;
             margin-bottom: 40px;
             font-weight: 700;
+            /* SEO优化：标题层级优化 */
+            scroll-margin-top: 80px;
         }
 
         /* ========== 顶部导航栏 ========== */
@@ -88,6 +104,8 @@
             background-color: var(--color-white);
             box-shadow: var(--shadow);
             z-index: 999;
+            /* 性能优化：避免重绘 */
+            will-change: transform;
         }
 
         .nav-wrap {
@@ -103,6 +121,8 @@
             max-width: 180px;
             object-fit: contain;
             display: block;
+            /* 性能优化：懒加载Logo（非关键） */
+            loading: lazy;
         }
 
         .nav-menu {
@@ -114,6 +134,12 @@
             font-weight: 500;
             color: var(--color-dark);
             transition: color 0.3s;
+            /* 导航链接优化：提升可点击区域 */
+            padding: 8px 0;
+            display: inline-block;
+            min-height: 44px;
+            min-width: 44px;
+            line-height: 44px;
         }
 
         .nav-menu li a:hover {
@@ -128,6 +154,7 @@
         .about-hero {
             margin-top: 70px;
             height: 20vh;
+            min-height: 200px; /* 响应式优化：最小高度 */
             background: linear-gradient(rgba(33,33,33,0.5), rgba(33,33,33,0.5)), 
                         url("assets/banner.webp") center/cover no-repeat;
             display: flex;
@@ -135,17 +162,22 @@
             justify-content: center;
             text-align: center;
             color: var(--color-white);
+            /* 性能优化：背景图固定 */
+            background-attachment: scroll;
         }
 
         .about-hero-content h1 {
-            font-size: 48px;
+            font-size: clamp(2.5rem, 5vw, 3rem); /* 响应式字体 */
             margin-bottom: 16px;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .about-hero-content p {
-            font-size: 18px;
+            font-size: clamp(1rem, 2vw, 1.125rem);
             max-width: 700px;
+            margin: 0 auto; /* 居中优化 */
+            padding: 0 16px;
         }
 
         /* ========== 品牌故事版块 ========== */
@@ -166,6 +198,10 @@
             height: auto;
             border-radius: 4px;
             box-shadow: var(--shadow);
+            /* 性能优化：懒加载图片 */
+            loading: lazy;
+            /* SEO优化：图片alt优化 */
+            border: 0;
         }
 
         .story-text h3 {
@@ -182,7 +218,7 @@
             color: var(--color-text);
         }
 
- /* ========== 悬浮WhatsApp按钮 ========== */
+        /* ========== 悬浮WhatsApp按钮 ========== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -197,6 +233,9 @@
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            /* 可访问性优化：提升可点击区域 */
+            min-height: 44px;
+            min-width: 44px;
         }
         .whatsapp-float:hover {
             transform: translateY(-5px);
@@ -205,9 +244,11 @@
         .whatsapp-float img {
             width: 32px;
             height: 32px;
+            /* 性能优化：懒加载 */
+            loading: lazy;
         }
 
-        /* ========== 核心优势版块（迁移自首页） ========== */
+        /* ========== 核心优势版块 ========== */
         .our-advantages {
             background-color: var(--color-bg-light);
         }
@@ -225,6 +266,8 @@
             border-radius: 8px;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            /* 性能优化：硬件加速 */
+            transform: translateZ(0);
         }
 
         .adv-item:hover {
@@ -266,6 +309,8 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            /* 性能优化：懒加载 */
+            loading: lazy;
         }
 
         .factory-card-content {
@@ -300,10 +345,11 @@
 
         .commitment-content p {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 20px; /* 间距优化 */
             font-size: 16px;
             line-height: 1.8;
             opacity: 0.9;
+            padding: 0 16px; /* 移动端内边距 */
         }
 
         /* ========== 联系我们引导 ========== */
@@ -327,6 +373,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            padding: 0 16px;
         }
 
         /* ========== 页脚 ========== */
@@ -365,6 +412,11 @@
             font-size: 14px;
             color: #ccc;
             line-height: 1.8;
+            /* 可访问性优化：链接可点击区域 */
+            display: inline-block;
+            min-height: 44px;
+            min-width: 44px;
+            line-height: 44px;
         }
 
         .footer-col a:hover {
@@ -379,10 +431,17 @@
             color: #999;
         }
 
-        /* ========== 响应式适配 ========== */
+        /* ========== 响应式适配（优化版） ========== */
         @media (max-width: 992px) {
             .story-row {
                 grid-template-columns: 1fr;
+                gap: 20px; /* 移动端间距优化 */
+            }
+            .story-row:nth-child(even) .story-text {
+                order: 2; /* 移动端图文顺序优化 */
+            }
+            .story-row:nth-child(even) .story-img {
+                order: 1;
             }
             .adv-grid,
             .factory-grid,
@@ -398,8 +457,19 @@
             .nav-menu {
                 display: none;
             }
+            .menu-toggle {
+                display: block;
+                /* 移动端菜单按钮：可访问性优化 */
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                min-height: 44px;
+                min-width: 44px;
+            }
             .about-hero {
                 height: 35vh;
+                min-height: 250px;
             }
             .about-hero-content p {
                 font-size: 16px;
@@ -424,6 +494,45 @@
             .commitment-content h3 {
                 font-size: 24px;
             }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* ========== 可访问性优化 ========== */
+        /* 焦点样式优化 */
+        a:focus, 
+        button:focus,
+        .btn:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* 打印样式优化 */
+        @media print {
+            header, 
+            .whatsapp-float,
+            footer {
+                display: none;
+            }
+            .about-hero {
+                margin-top: 0;
+                height: auto;
+                padding: 20px 0;
+                background: none;
+                color: var(--color-dark);
+            }
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
         }
     </style>
 </head>
@@ -431,14 +540,15 @@
     <!-- 顶部导航 -->
     <header>
         <div class="container nav-wrap">
-            <a href="index.html">
+            <a href="index.html" aria-label="OASIDOS Homepage">
                 <img src="assets/logo.webp" alt="OASIDOS Logo" class="logo-img">
             </a>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" aria-label="Home page">Home</a></li>
+                <li><a href="products.html" aria-label="Products page">Products</a></li>
+                <li><a href="about.html" aria-label="About Us page" aria-current="page">About Us</a></li>
+                <li><a href="contact.html" aria-label="Contact page">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -454,10 +564,10 @@
     <!-- 品牌故事 -->
     <section class="brand-story section-padding">
         <div class="container">
-            <h2 class="section-title">Our Story</h2>
+            <h2 class="section-title" id="our-story">Our Story</h2>
             <div class="story-row">
                 <div class="story-img">
-                    <img src="assets/about-us1.webp" alt="OASIDOS Factory & Team">
+                    <img src="assets/about-us1.webp" alt="OASIDOS Factory and Team Working on Starlink Mini Accessories">
                 </div>
                 <div class="story-text">
                     <h3>Born From Passion, Built For Reliability</h3>
@@ -474,16 +584,16 @@
                     <p>We're committed to continuous innovation, rigorous quality control, and exceptional customer service — ensuring that every OASIDOS product delivers on its promise of reliability and performance.</p>
                 </div>
                 <div class="story-img">
-                    <img src="assets/about-mission.webp" alt="OASIDOS Mission & Values">
+                    <img src="assets/about-mission.webp" alt="OASIDOS Mission - High Quality Starlink Mini Accessories Manufacturing">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 核心优势（迁移自首页） -->
+    <!-- 核心优势 -->
     <section class="our-advantages section-padding">
         <div class="container">
-            <h2 class="section-title">Our Advantages</h2>
+            <h2 class="section-title" id="our-advantages">Our Advantages</h2>
             <div class="adv-grid">
                 <div class="adv-item">
                     <h3>Professional Manufacturing</h3>
@@ -505,8 +615,6 @@
         </div>
     </section>
 
-    
-
     <!-- 我们的承诺 -->
     <section class="our-commitment">
         <div class="container commitment-content">
@@ -521,7 +629,7 @@
         <div class="container">
             <h3>Ready To Learn More?</h3>
             <p>Whether you have questions about our products, want to discuss custom solutions, or need wholesale pricing information, our team is here to help.</p>
-            <a href="contact.html" class="btn">Contact Us Today</a>
+            <a href="contact.html" class="btn" aria-label="Contact OASIDOS Today">Contact Us Today</a>
         </div>
     </section>
 
@@ -531,7 +639,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>OASIDOS</h4>
-                    <p>2nd Floor, Factory Building No. 1, No. 16 Kangzheng Road, Danzhutou Community, Nanwan Street, Longgang District</p>
+                    <p>2nd Floor, Factory Building No. 1, No. 16 Kangzheng Road, Danzhutou Community, Nanwan Street, Longgang District, Shenzhen, China</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -553,8 +661,8 @@
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <p>Email: hello@oasidos.com</p>
-                    <p>Tel / WeChat / WhatsApp: +8618025475525</p>
+                    <p>Email: <a href="mailto:hello@oasidos.com">hello@oasidos.com</a></p>
+                    <p>Tel / WeChat / WhatsApp: <a href="tel:+8618025475525">+8618025475525</a></p>
                 </div>
             </div>
             <div class="copyright">
@@ -562,7 +670,64 @@
             </div>
         </div>
     </footer>
-<!-- 悬浮WhatsApp按钮 -->
-<a href="https://wa.me/+8618025475525" target="_blank" class="whatsapp-float">💬</a>
+
+    <!-- 悬浮WhatsApp按钮 -->
+    <a href="https://wa.me/+8618025475525" target="_blank" class="whatsapp-float" aria-label="Chat with OASIDOS on WhatsApp">
+        <img src="assets/whatsapp-icon.svg" alt="WhatsApp Icon">
+    </a>
+
+    <!-- 性能优化：延迟加载非关键脚本 -->
+    <script defer>
+        // 移动端菜单切换（增强交互）
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                    // 可访问性：更新按钮状态
+                    const isExpanded = navMenu.style.display === 'flex';
+                    menuToggle.setAttribute('aria-expanded', isExpanded);
+                    menuToggle.setAttribute('aria-label', isExpanded ? 'Close navigation menu' : 'Open navigation menu');
+                });
+                
+                // 响应式调整时重置菜单
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768) {
+                        navMenu.style.display = 'flex';
+                        menuToggle.setAttribute('aria-expanded', 'true');
+                    } else {
+                        navMenu.style.display = 'none';
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // 平滑滚动（针对锚点链接）
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 图片加载错误处理（性能/用户体验）
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'assets/fallback-image.webp';
+                    this.alt = 'OASIDOS Starlink Mini Accessories';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
