@@ -6,6 +6,7 @@
     <title>Car Adapter - OASIDOS Starlink Mini Accessories</title>
     <meta name="description" content="Starlink Mini Car Adapter series, durable vehicle power adapters for outdoor use.">
     <meta name="keywords" content="Starlink Car Adapter, Starlink power adapter, Starlink Mini accessories">
+    <!-- 预加载字体提升加载速度 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,7 +19,8 @@
             --color-bg-light: #F5F5F5;
             --color-accent: #D35400;
             --color-white: #FFFFFF;
-            --shadow: 0 2px 8px rgba(0, 0, 0.08);
+            /* 修复阴影透明度语法错误 */
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
         * {
             margin: 0;
@@ -239,7 +241,7 @@
             font-size: 13px;
             color: #999;
         }
- /* ========== 悬浮WhatsApp按钮 ========== */
+        /* ========== 悬浮WhatsApp按钮 ========== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -254,6 +256,8 @@
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            /* 增加可点击区域 */
+            cursor: pointer;
         }
         .whatsapp-float:hover {
             transform: translateY(-5px);
@@ -264,7 +268,7 @@
             height: 32px;
         }
 
-        /* 响应式适配 */
+        /* 响应式适配 - 修复语法错误 + 优化断点 */
         @media (max-width: 992px) {
             .main-wrap {
                 grid-template-columns: 1fr;
@@ -280,8 +284,16 @@
             .nav-menu {
                 display: none;
             }
+            /* 补充移动端菜单按钮样式（保持布局不变，仅补全） */
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+                color: var(--color-dark);
+            }
         }
-        @media (max: 576px) {
+        /* 修复断点语法错误 max -> max-width */
+        @media (max-width: 576px) {
             .product-grid, .footer-grid {
                 grid-template-columns: 1fr;
             }
@@ -301,6 +313,8 @@
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <!-- 补全移动端菜单按钮（保持布局不变） -->
+            <div class="menu-toggle">☰</div>
         </div>
     </header>
 
@@ -328,7 +342,8 @@
                     <div class="product-card">
                         <a href="detail-car-adapter-01.html">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Car-Adapter1.webp" alt="Car Adapter 01"loading="lazy">
+                                <!-- 修复loading属性空格问题 -->
+                                <img src="assets/Starlink-Car-Adapter1.webp" alt="12V Car Power Adapter" loading="lazy">
                             </div>
                             <div class="product-name">12V Car Power Adapter</div>
                         </a>
@@ -336,7 +351,7 @@
                     <div class="product-card">
                         <a href="detail-car-adapter-02.html">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Car-Adapter2.webp" alt="Car Adapter 02"loading="lazy">
+                                <img src="assets/Starlink-Car-Adapter2.webp" alt="High Current Car Charger" loading="lazy">
                             </div>
                             <div class="product-name">High Current Car Charger</div>
                         </a>
@@ -344,7 +359,7 @@
                     <div class="product-card">
                         <a href="detail-car-adapter-03.html">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Car-Adapter3.webp" alt="Car Adapter 03"loading="lazy">
+                                <img src="assets/Starlink-Car-Adapter3.webp" alt="Waterproof Car Adapter" loading="lazy">
                             </div>
                             <div class="product-name">Waterproof Car Adapter</div>
                         </a>
@@ -352,7 +367,7 @@
                     <div class="product-card">
                         <a href="detail-car-adapter-04.html">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Car-Adapter4.webp" alt="Car Adapter 04"loading="lazy">
+                                <img src="assets/Starlink-Car-Adapter4.webp" alt="Portable Power Converter" loading="lazy">
                             </div>
                             <div class="product-name">Portable Power Converter</div>
                         </a>
@@ -360,7 +375,7 @@
                     <div class="product-card">
                         <a href="detail-car-adapter-05.html">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Car-Adapter5.webp" alt="Car Adapter 05"loading="lazy">
+                                <img src="assets/Starlink-Car-Adapter5.webp" alt="Multi-Port Car Adapter" loading="lazy">
                             </div>
                             <div class="product-name">Multi-Port Car Adapter</div>
                         </a>
@@ -368,7 +383,7 @@
                     <div class="product-card">
                         <a href="detail-car-adapter-06.html">
                             <div class="product-card-img-wrap">
-                                <img src="assets/Starlink-Car-Adapter6.webp" alt="Car Adapter 06"loading="lazy">
+                                <img src="assets/Starlink-Car-Adapter6.webp" alt="Heavy Duty Car Adapter" loading="lazy">
                             </div>
                             <div class="product-name">Heavy Duty Car Adapter</div>
                         </a>
@@ -378,7 +393,7 @@
         </div>
     </div>
 
-    <!-- 页脚区域 -->
+    <!-- 页脚区域 - 修复未闭合的a标签 -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -397,8 +412,8 @@
                     <h4>Products</h4>
                     <p><a href="mini-case.html">Mini Case</a></p>
                     <p><a href="roof-mount.html">Roof Mount</a></p>
-                    <p><a href="router-mount.html">Router Mount</p>
-                    <p><a href="tripod.html">Tripod</p>
+                    <p><a href="router-mount.html">Router Mount</a></p>
+                    <p><a href="tripod.html">Tripod</a></p>
                     <p><a href="car-mount.html">Car Mount</a></p>
                     <p><a href="car-adapter.html">Car Adapter</a></p>
                     <p><a href="protective-cover.html">Protective Cover</a></p>
@@ -417,7 +432,7 @@
     </footer>
     <!-- 悬浮WhatsApp聊天按钮 -->
     <a href="https://wa.me/8618025475525" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat with us on WhatsApp">
     </a>
 </body>
 </html>
