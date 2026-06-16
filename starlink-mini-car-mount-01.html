@@ -325,33 +325,26 @@
             color: var(--dark);
         }
 
-        /* 页脚 - 全屏样式 */
+        /* 页脚样式（统一网站风格） */
         footer {
-            width: 100%;
-            left: 0;
-            right: 0;
+            margin-top: 60px;
             background-color: var(--color-dark);
             color: var(--color-white);
             padding: 50px 0 20px;
-            margin-top: 20px;
+            width: 100%;
         }
+        /* 关键修改：页脚使用全局统一的container容器 */
         .footer-inner {
             width: 92%;
             max-width: 1200px;
             margin: 0 auto;
         }
-     .footer-grid {
-    display: grid;
-    /* 每一列最小220px，空间足够4列并排，不足自动换行成2列/1列 */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-/* 页脚链接文字禁止自动换行 */
-.footer-col p a,
-.footer-col p {
-    white-space: nowrap;
-}
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
         .footer-col h4 {
             font-size: 18px;
             margin-bottom: 16px;
@@ -361,16 +354,17 @@
         .footer-col h4::after {
             content: '';
             position: absolute;
+            left: 0;
             bottom: 0;
             width: 40px;
             height: 2px;
             background-color: var(--color-primary);
         }
-        .footer-col p,
-        .footer-col a {
+        .footer-col p, .footer-col a {
             font-size: 14px;
             color: #ccc;
             line-height: 1.8;
+            transition: color 0.3s ease;
         }
         .footer-col a:hover {
             color: var(--color-white);
@@ -449,6 +443,17 @@
                 width: 100%;
                 justify-content: center;
             }
+            /* 移动端页脚间距优化 */
+            .footer-grid {
+                gap: 20px;
+            }
+            .footer-col h4 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            .footer-col p, .footer-col a {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -502,7 +507,7 @@
                                  alt="Starlink Mini Car Mount for Dashboard & Windshield"
                                  width="800" height="800"
                                  loading="eager"
-                                 srcset="assets/Starlink_Car_Mount1-400.webp 400w, assets/Starlink-Car-Mount1-800.webp 800w"
+                                 srcset="assets/Starlink-Car-Mount1-400.webp 400w, assets/Starlink-Car-Mount1-800.webp 800w"
                                  sizes="(max-width: 768px) 100vw, 800px">
                         </div>
                         <div class="slider-item">
@@ -646,7 +651,7 @@
         </div>
     </div>
 
-    <!-- 全屏页脚 -->
+    <!-- 全屏页脚（统一风格核心修改） -->
     <footer>
         <div class="footer-inner">
             <div class="footer-grid">
@@ -658,19 +663,19 @@
                     <h4>Quick Links</h4>
                     <p><a href="index.html">Home</a></p>
                     <p><a href="product.html">Products</a></p>
-                    <p><a href="about.html">About Us</p>
+                    <p><a href="about.html">About Us</a></p>
                     <p><a href="contact.html">Contact</a></p>
                 </div>
                 <div class="footer-col">
                     <h4>Products</h4>
                     <p><a href="mini-case.html">Mini Case</a></p>
                     <p><a href="roof-mount.html">Roof Mount</a></p>
-                    <p><a href="router-mount.html">Router Mount</p>
-                    <p><a href="tripod.html">Tripod</p>
-                    <p><a href="car-mount.html">Car Mount</p>
-                    <p><a href="car-adapter.html">Car Adapter</p>
-                    <p><a href="protective-cover.html">Protective Cover</p>
-                    <p><a href="other-accessories.html">Other Accessories</p>
+                    <p><a href="router-mount.html">Router Mount</a></p>
+                    <p><a href="tripod.html">Tripod</a></p>
+                    <p><a href="car-mount.html">Car Mount</a></p>
+                    <p><a href="car-adapter.html">Car Adapter</a></p>
+                    <p><a href="protective-cover.html">Protective Cover</a></p>
+                    <p><a href="other-accessories.html">Other Accessories</a></p>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
