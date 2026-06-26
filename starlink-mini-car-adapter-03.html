@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="theme-color" content="#2C3E50">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <title>Starlink Mini 100W Step-Up Car Adapter 100W+65W PD | OASIDOS</title>
@@ -34,8 +34,8 @@
         :root {
             --color-primary: #2C3E50;
             --color-dark: #212121;
-            --color-text: #444;
-            --color-text-light: #777;
+            --color-text: #333;
+            --color-text-light: #666;
             --color-bg-light: #fff;
             --shadow: 0 2px 8px rgba(0,0,0,0.08);
             --radius: 4px;
@@ -51,8 +51,8 @@
         .nav-menu {display:flex;gap:32px}
         .nav-menu a {font-weight:500;color:var(--color-dark);transition:color .3s}
         .nav-menu a.active,.nav-menu a:hover {color:var(--color-primary)}
-        .main {margin-top:90px;padding:20px 0 40px}
-        .breadcrumb-bar {font-size:14px;color:#777;margin-bottom:12px}
+        .main-wrap {margin-top:90px;padding:20px 0 40px}
+        .breadcrumb-bar {font-size:14px;color:var(--color-text-light);margin-bottom:12px}
         .breadcrumb-bar span {color:var(--color-primary);font-weight:500}
         .product-main-wrap {display:grid;grid-template-columns:1fr 1.2fr;gap:40px;background:#fff;padding:30px;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:40px;align-items:flex-start}
         .product-left {display:flex;flex-direction:column;gap:15px}
@@ -69,13 +69,13 @@
             height:40px;
             border-radius:50%;
             border:none;
-            background:rgba(0,0,0,.4);
+            background:rgba(0,0,0,.45);
             color:#fff;
             font-size:18px;
             cursor:pointer;
             z-index:3;
         }
-        .prev-btn:hover,.next-btn:hover {background:rgba(0,0,0,.6)}
+        .prev-btn:hover,.next-btn:hover {background:rgba(0,0,0,.7)}
         .prev-btn {left:12px;}
         .next-btn {right:12px;}
         .thumb-list {display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
@@ -85,12 +85,12 @@
         .product-right h1 {font-size:20px;line-height:1.4;color:var(--color-dark);margin-bottom:18px}
         .price-moq {padding:12px 15px;background:#f8f8f8;border-radius:var(--radius);margin-bottom:18px}
         .price-moq strong {color:var(--color-primary)}
-        .info-title {font-size:16px;font-weight:700;color:var(--color-dark);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #eee}
+        h2.info-title {font-size:16px;font-weight:700;color:var(--color-dark);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #eee}
         .bullet-list li {font-size:13px;margin-bottom:8px;padding-left:18px;position:relative}
         .bullet-list li::before {content:"•";position:absolute;left:0;color:var(--color-primary);font-weight:bold}
         .product-actions {margin-top:25px;display:flex;gap:12px;flex-wrap:wrap}
         .action-btn {padding:10px 28px;border-radius:var(--radius);border:none;font-weight:500;font-size:16px;color:#fff;display:inline-flex;align-items:center;gap:10px;cursor:pointer;transition:.3s}
-        .chat-btn {background:#25D366}.chat-btn:hover {background:#12b356}
+        .chat-btn {background:#25D366}.chat-btn:hover {background:#0ea34b}
         .inquiry-btn {background:#2c3a4c}.inquiry-btn:hover {background:#1f2a37}
         .inquiry-form {display:none;margin-top:20px;padding:20px;background:#fbfbfb;border-radius:var(--radius);border:1px solid #eee}
         .inquiry-form.active {display:block;animation:fadeIn .5s ease}
@@ -98,23 +98,22 @@
         .form-group {margin-bottom:15px}
         .form-group label {display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--color-dark)}
         .form-group input,.form-group textarea {width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:var(--radius);font-family:inherit;font-size:14px}
-        .form-group input:focus,.form-group textarea:focus {outline:none;border-color:var(--color-primary)}
+        .form-group input:focus,.form-group textarea:focus {outline:2px solid var(--color-primary);outline-offset:1px;border-color:transparent}
         .form-group textarea {min-height:100px;resize:vertical}
         .submit-btn {background:var(--color-primary);color:#fff;padding:10px 28px;border:none;border-radius:var(--radius);font-size:16px;display:inline-flex;align-items:center;gap:10px;cursor:pointer}
         .submit-btn:hover {background:#1a2533}
         .tip-modal {position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.85);color:#fff;padding:16px 32px;border-radius:var(--radius);font-size:16px;z-index:10000;display:none}
         .spec-section {padding:30px 0}
         .full-spec-table {width:100%;border-collapse:collapse;margin-top:20px;background:#fff}
-        .full-spec-table th,.full-spec-table td {border:1px solid #eee;padding:12px 15px;font-size:14px}
-        .full-spec-table th {background:#f8f8;font-weight:600}
+        .full-spec-table td {border:1px solid #eee;padding:12px 15px;font-size:14px}
         footer {margin-top:60px;background:#212121;color:#fff;padding:50px 0 20px;width:100%}
         .footer-inner {width:92%;max-width:1200px;margin:0 auto}
-        .footer-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-bottom:40px}
-        .footer-col h4 {font-size:18px;padding-bottom:8px;position:relative;margin-bottom:12px}
-        .footer-col h4::after {content:'';position:absolute;left:0;bottom:0;width:40px;height:2px;background:var(--color-primary)}
+        .footer-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-bottom:40}
+        .footer-col h2 {font-size:18px;padding-bottom:8px;position:relative;margin-bottom:12px}
+        .footer-col h2::after {content:'';position:absolute;left:0;bottom:0;width:40px;height:2px;background:var(--color-primary)}
         .footer-col p,.footer-col a {font-size:14px;color:#ccc;line-height:1.8}
         .footer-col a:hover {color:#fff}
-        .copyright {text-align:center;padding-top:20px;border-top:1px solid #333;font-size:13px;color:#999}
+        .copyright {text-align:center;padding-top:20px;border-top:1px solid #333;font-size:13px;color:#aaa}
         .whatsapp-float {position:fixed;bottom:25px;right:25px;width:60px;height:60;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:var(--shadow);z-index:9999}
         .whatsapp-float:hover {transform:scale(1.05);background:#128C7E}
         @media (max-width:992px) {
@@ -136,7 +135,7 @@
             .action-btn {width:100%;justify-content:center}
         }
     </style>
-    <!-- WebSite -->
+    <!-- WebSite 站点结构化 -->
     <script type="application/ld+json">
     {
         "@context":"https://schema.org",
@@ -168,7 +167,7 @@
             "https://oasidos.com/detail-car-adapter-all/Starlink_Car_Adapter3 (3).webp"
         ],
         "thumbnailUrl":"https://oasidos.com/detail-car-adapter-all/Starlink_Car_Adapter3 (1).webp",
-        "description":"12V to 24V Starlink Mini car charger with 100W DC and 65W PD USB-C dual output, aluminum heat dissipation housing, fits RV, truck, boat, MOQ 10pcs EXW price $8-$12.",
+        "description":"12V to 24V Starlink Mini car charger with 100W DC and 65W PD USB-C output, aluminum heat dissipation housing, suitable for RV, truck and boat, MOQ 10pcs, EXW price $8-$12.",
         "itemOffered":{"@type":"ProductModel","model":"SCA-03"},
         "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"15"},
         "review":[
@@ -206,7 +205,7 @@
         ]
     }
     </script>
-    <!-- Organization 带image字段 -->
+    <!-- Organization 带完整标准地址+image字段 -->
     <script type="application/ld+json">
     {
         "@context":"https://schema.org",
@@ -280,7 +279,7 @@
         </ul>
     </div>
 </header>
-<div class="container main">
+<main class="container main-wrap">
     <div class="breadcrumb-bar">
         <a href="index.html">Home</a> &gt; <a href="product.html">Products</a> &gt; <span>Starlink Mini 100W Step-Up Car Adapter</span>
     </div>
@@ -346,8 +345,8 @@
                 </button>
             </div>
             <div class="inquiry-form" id="inquiryForm">
-                <h3 class="info-title">Send Bulk Inquiry</h3>
-                <form id="inquiryForm" novalidate>
+                <h2 class="info-title">Send Bulk Inquiry</h2>
+                <form id="inquiryFormElement" novalidate>
                     <input type="hidden" id="productUrl" name="productUrl">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
@@ -375,38 +374,55 @@
     <div class="spec-section">
         <h2 class="info-title">Technical Specifications</h2>
         <table class="full-spec-table">
-            <tr><td>Model</td><td>SCA-03 Starlink Mini 100W Step-Up Car Adapter</td></tr>
-            <tr><td>Input Voltage</td><td>12V / 24V Vehicle DC System</td></tr>
-            <tr><td>Output</td><td>100W DC + 65W PD USB-C</td></tr>
-            <tr><td>Housing</td><td>Thickened Heat-dissipating Aluminum Alloy</td></tr>
-            <tr><td>Protection</td><td>OV / OC / OT / Short Circuit Multi-protection</td></tr>
-            <tr><td>Applicable Vehicles</td><td>Car, RV, Truck, Yacht, Boat, Camper Van</td></tr>
+            <tr>
+                <td>Model</td>
+                <td>SCA-03 Starlink Mini 100W Step-Up Car Adapter</td>
+            </tr>
+            <tr>
+                <td>Input Voltage</td>
+                <td>12V / 24V Vehicle DC System</td>
+            </tr>
+            <tr>
+                <td>Output</td>
+                <td>100W DC + 65W PD USB-C</td>
+            </tr>
+            <tr>
+                <td>Housing</td>
+                <td>Thickened Heat-dissipating Aluminum Alloy</td>
+            </tr>
+            <tr>
+                <td>Protection</td>
+                <td>OV / OC / OT / Short Circuit Multi-protection</td>
+            </tr>
+            <tr>
+                <td>Applicable Vehicles</td>
+                <td>Car, RV, Truck, Yacht, Boat, Camper Van</td>
         </table>
     </div>
-</div>
-<div class="tip-modal" id="tipModal" role="status">OASIDOS sales will reply within 24 hours</div>
+</main>
+<div class="tip-modal" role="status">OASIDOS sales will reply within 24 hours</div>
 <footer>
     <div class="footer-inner container">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>OASIDOS Factory</h4>
-                <p>2F Factory No.1, No. 16 Kangzheng Road, Danzhutou Community, Nanwan Street, Longgang District,Shenzhen, China</p>
+                <h2>OASIDOS Factory</h2>
+                <p>2F Factory No.1, No.16 Kangzheng Road, Danzhutou Community, Nanwan Street, Longgang District, Shenzhen, China</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h2>Quick Links</h2>
                 <p><a href="index.html">Home</a></p>
                 <p><a href="product.html">All Products</a></p>
                 <p><a href="about.html">About Us</a></p>
                 <p><a href="contact.html">Contact</a></p>
             </div>
             <div class="footer-col">
-                <h4>Starlink Accessories</h4>
+                <h2>Starlink Accessories</h2>
                 <p><a href="car-adapter.html">Car Adapters</a></p>
                 <p><a href="roof-mount.html">Roof Mounts</a></p>
                 <p><a href="tripod.html">Portable Tripods</a></p>
             </div>
             <div class="footer-col">
-                <h4>Contact Info</h4>
+                <h2>Contact Info</h2>
                 <p>Email: hello@oasidos.com</p>
                 <p>WhatsApp: +8618038131740</p>
             </div>
